@@ -48,4 +48,39 @@ new_numbers #=> [2, 4]
 
 
 
+# %記法
+# 空白(スペース)が要素の区切り文字となる
+['apple', 'melon', 'orange']
+%w(apple melon orange) #式展開とかしたい場合は、%W(大文字)
+%w!apple melon orange!
+
+
+# splitメソッド
+# 引数で渡した区切り文字で文字列を配列に分割(charsメソッドは1文字ずつで区切る)
+'Ruby,Java,Perl,PHP'.split(',')
+#=> ["Ruby", "java", "Perl", "PHP"]
+
+
+# 添え字付きの繰り返し処理
+# with_indexメソッドはeach以外にもmap, delete_ifなど繰り返し処理に使える
+fruits = ['apple', 'orange', 'melon']
+fruits.each.with_index { |fruit, i| "#{i}": "#{fruit}"}
+#=> 0: apple
+  # 1: orange
+  # 2: melon
+
+
+# 繰り返しからの脱出
+fruits = ['apple', 'orange', 'melon']
+nembers = [1, 2, 3]
+catch :done do
+	fruits.shuffle.each do |fruit|
+		numbers.shuffle.each do |n|
+			puts "#{fruit}, #{n}"
+			if fruit == 'orange' && n == 3
+        throw :done
+      end
+    end
+  end
+end
 
