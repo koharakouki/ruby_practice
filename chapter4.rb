@@ -48,4 +48,17 @@ new_numbers #=> [2, 4]
 
 
 
+# %記法
+# 空白(スペース)が要素の区切り文字となる
+['apple', 'melon', 'orange']
+%w(apple melon orange) #式展開とかしたい場合は、%W(大文字)
+%w!apple melon orange!
+
+
+# splitメソッド
+# 引数で渡した区切り文字で文字列を配列に分割(charsメソッドは1文字ずつで区切る)
+'Ruby,Java,Perl,PHP'.split(',')
+#=> ["Ruby", "java", "Perl", "PHP"]
+
+
 
