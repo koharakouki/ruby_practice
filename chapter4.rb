@@ -61,4 +61,12 @@ new_numbers #=> [2, 4]
 #=> ["Ruby", "java", "Perl", "PHP"]
 
 
+# 添え字付きの繰り返し処理
+# with_indexメソッドはeach以外にもmap, delete_ifなど繰り返し処理に使える
+fruits = ['apple', 'orange', 'melon']
+fruits.each.with_index { |fruit, i| "#{i}": "#{fruit}"}
+#=> 0: apple
+  # 1: orange
+  # 2: melon
+
 
