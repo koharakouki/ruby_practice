@@ -70,3 +70,17 @@ fruits.each.with_index { |fruit, i| "#{i}": "#{fruit}"}
   # 2: melon
 
 
+# 繰り返しからの脱出
+fruits = ['apple', 'orange', 'melon']
+nembers = [1, 2, 3]
+catch :done do
+	fruits.shuffle.each do |fruit|
+		numbers.shuffle.each do |n|
+			puts "#{fruit}, #{n}"
+			if fruit == 'orange' && n == 3
+        throw :done
+      end
+    end
+  end
+end
+
